@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function loadHandler() {
+			
+			}
+			function changeHandler() {
+				var departments = [
+						  ["會計學系", "國際經營與貿易學系", "國際經營與貿易學系國際企業管理全英語學士班", "財稅學系",  
+							"合作經濟暨社會事業經營學系", "統計學系", "經濟學系", "企業管理學系", "行銷學系",  
+							"國際企業管理學士學位學程(英語專班)", "商學進修學士學位學程", 
+							"財經法律研究所", "科技管理碩士學位學程", "產業碩士專班", "商學專業碩士在職學位學程", "商學博士學位學程"],
+						  ["機械與電腦輔助工程學系", "纖維與複合材料學系", "工業工程與系統管理學系", "化學工程學系"],
+						  ["土木工程學系", "水利工程與資源保育學系", "都市計畫與空間資訊學系", "運輸與物流學系", "土地管理學系"] 
+						];
+				var aca = "";
+				aca = document.getElementById("academy").value;
+				
+				 aca = parseInt(aca);
+				 //document.getElementById("demo").innerHTML = aca;
+				 document.getElementById("departmentSelector").innerHTML = "";
+				for (var i = 0; i < departments[aca].length; i++) {
+					document.getElementById("departmentSelector").innerHTML += '<option value="' + i + '">' + departments[aca][i] + '</option>';
+				}
+				
+				
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<select name="academy" id="academy" onload="loadHandler" onchange="changeHandler()">
+			<option value="0">商學院</option>
+			<option value="1">工學院</option>
+			<option value="2">建築學院</option>
+			<!-- 
+			<option value="3">國際科技與管理學院</option>
+			<option value="4">資電學院</option>
+			<option value="5">人文學院</option>
+			<option value="6">理學院</option>
+			-->
+		</select>
+		
+		
+		<form action="">
+		  <select id="departmentSelector" name="department">
+		  </select>
+		  <input type="submit">
+		</form>
+		
+		<p id="demo"> </p>
+		
+
+	</body>
+</html>
